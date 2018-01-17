@@ -1,0 +1,50 @@
+
+alimentacion {
+
+
+$break-small: 320px;
+
+
+    
+ion-label{
+    font-size: 18px;
+}
+.range{
+    padding-top:40px;
+}
+.rb{
+    padding-top: 10px;
+}
+
+
+    h1{
+        padding-top: 20px;
+    }
+ 
+
+  .icon-img{
+    position: absolute;
+    bottom: 5px;
+    width:50px;
+
+  }
+.hidden{
+    
+    visibility: hidden;
+
+}
+.show{
+    
+    visibility:visible;
+
+}
+    @media screen and (max-width: $break-small) {
+   ion-footer{
+    padding-bottom: 20px;
+     }
+     ion-label{
+    font-size: 16px;
+}
+  }
+
+}

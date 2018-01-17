@@ -1,0 +1,51 @@
+page-mensajes {
+    .text-muted-right{
+        float: right;
+    }
+
+    // .chats-page-conten{
+    //     height: 100%;
+    // }
+    .detalle{
+      height:60vh;
+      
+    }
+    .chats-page-content {
+      height:85vh;
+      
+        .chat-picture {
+          border-radius: 50%;
+          width: 50px;
+          float: left;
+        }
+       
+        .chat-info {
+          float: left;
+          margin: 10px 0 0 20px;
+       
+      
+        }
+      }
+      .columna-chat {
+          
+        
+      }
+      .chats{
+        
+      }
+      .grid{
+        height: 100% !important;
+      }
+
+    
+      .send{
+          height: 50px;
+      }
+      .active{
+        box-shadow: 5px 0px 0px green;
+      }
+      div.scroll-content {
+        padding-bottom: 1px !important;
+    }
+}
+

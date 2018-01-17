@@ -1,0 +1,55 @@
+<div text-center>
+<h1>Seleccione Evento de Alimentación </h1>
+<ion-grid>
+
+
+<ion-row radio-group>
+  <ion-col col-10 col-md-3 col-lg-2 col-xl-2>
+    <ion-label>Desayuno</ion-label>
+  </ion-col>
+  <ion-col col-2 col-md-1 col-lg-2 col-xl-2>
+    <ion-radio value="desayuno" class="rb" (ionSelect)="validar('desayuno')"></ion-radio>
+
+  </ion-col>
+  <ion-col col-10 col-md-3 col-lg-3 col-xl-3>
+    <ion-label>Almuerzo</ion-label>
+  </ion-col>
+  <ion-col col-2 col-md-1 col-lg-1 col-xl-1>
+    <ion-radio value="c" class="rb" (ionSelect)="validar('almuerzo')" ></ion-radio>
+
+  </ion-col>
+  <ion-col col-10 col-md-3 col-lg-3 col-xl-3>
+    <ion-label>Merienda</ion-label>
+  </ion-col>
+  <ion-col col-2 col-md-1 col-lg-1 col-xl-1>
+    <ion-radio value="d" class="rb" (ionSelect)="validar('merienda')"></ion-radio>
+
+  </ion-col>
+</ion-row>
+
+
+
+
+
+</ion-grid>
+
+<ion-grid>
+  <ion-row  [ngClass]="{'hidden':evento.length<1,'show':evento.length>1}">
+    <ion-col col-3  col-md-2 col-lg-2 col-xl-2  >
+      <img src="assets/biberon-vacio.png"  class="icon-img">
+    </ion-col>
+    <ion-col col-9 col-md-10 col-lg-10 col-xl-10 class="range">
+       <ion-label>Cantidad:  {{ valor | cantidad}} </ion-label>
+                 
+    <ion-range min="0" max="999" step="333" snaps="true" color="primary" [(ngModel)]="valor" (ionChange)="rangeChange()"> </ion-range>
+    </ion-col>
+  </ion-row>
+
+
+</ion-grid>
+
+
+
+
+
+

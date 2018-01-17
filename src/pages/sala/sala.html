@@ -1,0 +1,55 @@
+<!--
+  Generated template for the SalaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    
+    <ion-title>sala:{{nombre_sala}}</ion-title>
+
+<ion-buttons end>
+<button ion-button icon-only (click)="mensajes()" >
+  <ion-icon name="ios-create-outline"></ion-icon>
+  Nuevo
+
+</button >
+</ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+
+        
+<!-- http://static.vix.com/es/sites/default/files/styles/large/public/imj/entrepadres/g/guarderia-o-maternal-2.jpg?itok=Ap5S2mft-->
+
+<ion-content class="card-background-page"  >
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+   <ion-grid>
+      <ion-row>
+        <!--sm: 576px, md: 768px, lg: 992px, xl-->
+        <ion-col  col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4  *ngFor="let item of infantes ">
+            <ion-card (tap)="enviarNotificacion(item.nombre_completo,item.id,item.estado,item.foto)">
+             <img cache="true" [src]="'https://virtualkinder.com/subir/uploads/' +item.foto"
+                [ngClass]="{'desaturate': item.estado ==='ausente' || item.estado==='INICIO' }"           
+                 />
+                  <div class="card-title">{{item.nombre_completo}}</div>
+                  <img [hidden]="item.estado !='INICIO'" class="image2" src="assets/sleep.png">
+           </ion-card>
+        </ion-col>
+       
+      </ion-row>
+   </ion-grid>
+
+  
+
+ 
+</ion-content>

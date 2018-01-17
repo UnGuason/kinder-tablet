@@ -1,0 +1,61 @@
+$break-small: 320px;
+page-sala {
+
+    .logo{
+        margin-left:30px;
+    }
+    .toolbar-background {
+  background-color:#B2EBF2;
+}
+
+
+ion-searchbar {
+    background-color:#f4f4f4 !important;
+}
+.image2 {
+  position: absolute;
+  top:0px;
+  left:1px;
+}
+
+.card-background-page {
+
+  ion-card {
+    align-content: center;
+    position: relative;
+    text-align: center;
+  
+  
+  }
+
+  .card-title {
+    position: absolute;
+    text-align: center;
+    bottom:20%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    
+    background-color:rgba(69, 47, 63, 0.4);
+  }
+
+  .card-subtitle {
+    text-align: left;
+    font-size: 1.0em;
+    position: absolute;
+    bottom:10%;
+    width: 100%;
+    color:white;
+    background-color:rgba(61, 90, 254,0.7);
+
+
+  }
+
+}
+.desaturate {
+	filter: grayscale(100%);
+}
+
+
+}

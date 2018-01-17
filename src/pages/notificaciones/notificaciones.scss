@@ -1,0 +1,47 @@
+page-notificaciones {
+$break-small: 320px;
+
+ion-segment-button{
+    width:16% !important;
+}
+@media (min-width: 350px)  and (max-width: 768px) {
+
+}
+
+
+.rowfull{
+height: 100%;
+}
+
+
+ .text-muted{
+        text-align: center;
+        margin-top:40px;
+        color:#C0A4A0;
+    }
+
+
+    ion-icon{
+        font-size: 30px;
+        color:green
+    }
+
+    .principal{
+background-color: white;
+height: 100%;
+width: 100%;
+padding-top:40px;
+    }
+    .notifications{
+        padding-bottom:30px !important;
+    }
+      @media screen and (max-width: $break-small) {
+   .footer{
+    margin-top: 20px;
+      }
+  }
+
+  body.keyboard-open .has-footer{	
+bottom: 0;
+}
+}

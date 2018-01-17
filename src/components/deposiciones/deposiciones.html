@@ -1,0 +1,63 @@
+<div text-center>
+<h1>Seleccione tipo de cambio de pañal</h1>
+<ion-grid>
+
+
+<ion-row radio-group>
+  <ion-col col-10 col-md-3 col-md-3 offset-md-2 col-lg-2 col-xl-2>
+    <ion-label>Pis</ion-label>
+  </ion-col>
+  <ion-col col-2 col-md-1 col-lg-2 col-xl-2>
+    <ion-radio value="pis" class="rb" (ionSelect)="validar('pis')"></ion-radio>
+
+  </ion-col>
+  <ion-col col-10 col-md-3 col-lg-3 col-xl-3>
+    <ion-label>Caca</ion-label>
+  </ion-col>
+  <ion-col col-2 col-md-1 col-lg-1 col-xl-1>
+    <ion-radio value="caca" class="rb"  (ionSelect)="validar('caca')" ></ion-radio>
+
+  </ion-col>
+
+
+  <ion-col col-12 col-md-12 col-lg-12 col-xl-12 *ngIf="caca" >
+
+<h1>Seleccione tipo de caca</h1>
+
+      
+  </ion-col>
+
+</ion-row>
+
+      <!--<img src="assets/pañal.png" width="50px" class="icon-img">-->
+
+<ion-row radio-group *ngIf="caca">
+  <ion-col col-10  col-lg-2 col-xl-2>
+    <ion-label>Blanda </ion-label>
+  </ion-col>
+  <ion-col col-2 col-md-1 col-lg-2 col-xl-2>
+    <ion-radio value="blanda" class="rb"  (ionSelect)="validar('caca','blanda')"></ion-radio>
+
+  </ion-col>
+  <ion-col col-10 col-md-3 col-lg-3 col-xl-3>
+    <ion-label>Normal</ion-label>
+  </ion-col>
+  <ion-col col-2 col-md-1 col-lg-1 col-xl-1>
+    <ion-radio value="normal" class="rb" (ionSelect)="validar('caca','normal')"></ion-radio>
+
+  </ion-col>
+    <ion-col col-10 col-md-3 col-lg-3 col-xl-3>
+    <ion-label>Dura</ion-label>
+  </ion-col>
+  <ion-col col-2 col-md-1 col-lg-1 col-xl-1>
+    <ion-radio value="dura" class="rb" (ionSelect)="validar('caca','constipado')"></ion-radio>
+
+  </ion-col>
+
+</ion-row>
+
+
+
+
+ 
+

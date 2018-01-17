@@ -1,0 +1,161 @@
+<!--
+  Generated template for the NotificacionesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-segment [(ngModel)]="tabs" (ionChange)="tab($event.value)">
+      <ion-segment-button value="alimentacion">
+        Alimentación
+      </ion-segment-button>
+      <ion-segment-button value="descanso">
+        Descanso
+      </ion-segment-button>
+      <ion-segment-button value="deposiciones">
+        Deposiciones
+      </ion-segment-button>
+      <ion-segment-button value="especial">
+        Especial
+      </ion-segment-button>
+      <ion-segment-button value="salida">
+        Salida
+      </ion-segment-button>
+    </ion-segment>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content col-12 >
+  <ion-grid >
+    <ion-row >
+      <ion-col col-12 col-md-4 col-lg-4 col-xl-4  class="notifications" [hidden]="mostrarNotificaciones">
+        <img cache="true" [src]="'https://virtualkinder.com/subir/uploads/' +foto"
+        />
+
+        <ion-card-content>
+          <ion-card-title>
+           {{nombre}}
+          </ion-card-title>
+          </ion-card-content>
+          <!-- style="overflow-y: hidden;" -->
+                                              <ion-content >
+                                                <ion-scroll scrollY="true" style="width: 100%; height: 100%;">
+
+                                                  <ion-list>
+                                                      <ion-item text-wrap *ngFor="let items of notificaciones"    >
+                                                          <small class="text-muted-right"  >{{items.hora }}</small>
+                                                          <!-- <h3 item-end>{{item.fecha | date:'medium'}}</h3> -->
+                                                          
+                                                        <!-- <ion-avatar item-start *ngIf="items.correo_origen == correo" >
+                                                          <img  src="{{items.foto}}">
+                                                        </ion-avatar> -->
+<!--                           
+                                                        <ion-avatar item-end  *ngIf="items.correo_origen != correo">
+                                                            <img  src="{{items.foto}}">
+                                                          </ion-avatar> -->
+                          
+                          
+                                                        <h2>{{items.tipo}}</h2>
+                          
+                                                        
+                                                        <p text-right> {{items.cantidad}}</p>
+                          
+                                                      </ion-item>
+
+
+                                                  </ion-list>
+
+                                                </ion-scroll>
+                                              </ion-content>
+
+      </ion-col>
+
+
+      <!--columna notificaciones-->
+      <ion-col class="descripcion" col-12 col-md-8 col-lg-8 col-xl-8>
+        <div [ngSwitch]="tabs">
+          <ion-list *ngSwitchCase="'alimentacion'">
+            <alimentacion (validComponent)="obtenerDato($event)"></alimentacion>
+          </ion-list>
+          <ion-list *ngSwitchCase="'descanso'">
+            <div text-center>
+              <h1>Descanso</h1>
+              <p class="text-muted">Mientras el niño esta dormido no se podrán enviar otras notificaciones</p>
+            </div>
+            <ion-row>
+            </ion-row>
+           
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'deposiciones'">
+
+            <deposiciones (validComponent)="obtenerDato($event)"></deposiciones>
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'especial'">
+
+            <div text-center>
+              <h1 color="red">Notificación para enviar en caso de emergencias</h1>
+              <p class="text-muted">Las notificaciones especiales solo deben usarse en emergencias</p>
+
+            </div>
+
+
+
+            <ion-item>
+              <ion-label color="primary" floating>Ingresar Texto a enviar junto con la notificación</ion-label>
+              <ion-input name="texto" [(ngModel)]="texto"  (input)="functionTextoEspecial($event.target.value)"></ion-input>
+            </ion-item>
+            <p>{{texto}}</p>  
+
+
+
+          </ion-list>
+          <ion-list *ngSwitchCase="'salida'">
+
+
+
+
+
+
+            <div text-center>
+              <h1>Notificación de Salida</h1>
+              <p class="text-muted">Una vez que el niño se retira no puede ser ingresado hasta el próximo día</p>
+
+            </div>
+            <ion-row>
+            </ion-row>
+
+
+          </ion-list>
+          <ion-list *ngSwitchDefault>
+            <h2 text-center>Seleccione Notificación de la barra Superior </h2>
+          </ion-list>
+          
+          <div class="footer hide-on-keyboard-open" *ngIf="tabs" >
+            <button class="btnsend" ion-button outline danger block
+             [disabled]="!validSend"
+             (tap)="confirmaNotificacion()">
+                                     Enviar Notificación de {{PestanaActiva}}
+            </button>
+
+          </div>
+        </div>
+      </ion-col>
+<ion-content></ion-content>
+
+
+
+    </ion-row>
+
+  </ion-grid>
+
+
+
+
+</ion-content>
